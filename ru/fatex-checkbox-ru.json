@@ -2,7 +2,7 @@
   "name": "FateX RU переключаемые последствия",
   "system": "fatex",
   "author": "YoshiakiHisaka",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minimumSystemVersion": "1.5.4",
   "offline_excludes": [
     "npc"
@@ -10,10 +10,10 @@
   "rows": [
     [
       {
-        "name": "Персонаж",
+        "name": "Портрет",
         "type": "direct",
         "header": "show",
-        "text": "{charactersheet}{nl}{name}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "text": "{charactersheet}",
         "align": "center"
       },
       {
@@ -21,21 +21,69 @@
         "type": "object-loop",
         "header": "show",
         "text": "items{type == 'aspect' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
+        "align": "left",
+        "rowspan": 4,
+        "valign": "top"
       },
       {
         "name": "Активные",
         "type": "object-loop",
         "header": "show",
-        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == true} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
+        "text": "{fa fa-x}{nl} items{type == 'consequence' && system.value != '' && system.label != '' && system.active == true} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left",
+        "rowspan": 2,
+        "valign": "top"
+      }
+    ],
+    [
+      {
+        "name": "Имя",
+        "type": "direct",
+        "header": "show",
+        "text": "{name}",
+        "align": "center"
+      },
+      {
+      "name": "",
+      "type": "span",
+      "header": "show",
+      "text": "",
+      "colspan": 2
+      }
+    ],
+    [
+      {
+        "name": "Жетоны",
+        "type": "direct",
+        "header": "show",
+        "text": "{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "align": "center",
+        "rowspan": 2,
+        "valign": "top"
+      },
+      {
+      "name": "span_placeholder",
+      "type": "span",
+      "header": "hide",
+      "text": ""
       },
       {
         "name": "Неактивные",
         "type": "object-loop",
         "header": "show",
-        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == false} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
+        "text": "{fa-regular fa-square}{nl} items{type == 'consequence' && system.value != '' && system.label != '' && system.active == false} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left",
+        "rowspan": 2,
+        "valign": "top"
+      }
+    ],
+    [
+      {
+        "name": "",
+        "type": "span",
+        "header": "show",
+        "text": "",
+        "colspan": 3
       }
     ]
   ]

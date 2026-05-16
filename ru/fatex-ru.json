@@ -2,7 +2,7 @@
   "name": "FateX RU",
   "system": "fatex",
   "author": "YoshiakiHisaka",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "minimumSystemVersion": "1.5.4",
   "offline_excludes": [
     "npc"
@@ -10,10 +10,10 @@
   "rows": [
     [
       {
-        "name": "Персонаж",
+        "name": "Портрет",
         "type": "direct",
         "header": "show",
-        "text": "{charactersheet}{nl}{name}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "text": "{charactersheet}",
         "align": "center"
       },
       {
@@ -21,14 +21,50 @@
         "type": "object-loop",
         "header": "show",
         "text": "items{type == 'aspect' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
+        "align": "left",
+        "rowspan": 3,
+        "valign": "top"
       },
       {
         "name": "Последствия",
         "type": "object-loop",
         "header": "show",
         "text": "items{type == 'consequence' && system.value != '' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
+        "align": "left",
+        "rowspan": 3,
+        "valign": "top"
+      }
+    ],
+    [
+      {
+        "name": "Имя",
+        "type": "direct",
+        "header": "show",
+        "text": "{name}",
+        "align": "center"
+      },
+      {
+        "name": "",
+        "type": "span",
+        "header": "show",
+        "text": "",
+        "colspan": 2
+      }
+    ],
+    [
+      {
+        "name": "Жетоны",
+        "type": "direct",
+        "header": "show",
+        "text": "{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "align": "center"
+      },
+      {
+        "name": "",
+        "type": "span",
+        "header": "show",
+        "text": "",
+        "colspan": 2
       }
     ]
   ]
