@@ -1,0 +1,42 @@
+{
+  "name": "FateX RU переключаемые последствия",
+  "system": "fatex",
+  "author": "YoshiakiHisaka",
+  "version": "1.0.0",
+  "minimumSystemVersion": "1.5.4",
+  "offline_excludes": [
+    "npc"
+  ],
+  "rows": [
+    [
+      {
+        "name": "Персонаж",
+        "type": "direct",
+        "header": "show",
+        "text": "{charactersheet}{nl}{name}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "align": "center"
+      },
+      {
+        "name": "Аспекты",
+        "type": "object-loop",
+        "header": "show",
+        "text": "items{type == 'aspect' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left"
+      },
+      {
+        "name": "Активные",
+        "type": "object-loop",
+        "header": "show",
+        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == true} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left"
+      },
+      {
+        "name": "Неактивные",
+        "type": "object-loop",
+        "header": "show",
+        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == false} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left"
+      }
+    ]
+  ]
+}

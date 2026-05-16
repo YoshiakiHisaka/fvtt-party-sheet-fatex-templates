@@ -3,7 +3,7 @@
   "system": "fatex",
   "author": "YoshiakiHisaka",
   "version": "1.0.0",
-  "minimumSystemVersion": "1.0.0",
+  "minimumSystemVersion": "1.5.4",
   "offline_excludes": [
     "npc"
   ],
@@ -13,7 +13,7 @@
         "name": "Персонаж",
         "type": "direct",
         "header": "show",
-        "text": "{name}{nl}{charactersheet}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "text": "{charactersheet}{nl}{name}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
         "align": "center"
       },
       {
@@ -24,17 +24,10 @@
         "align": "left"
       },
       {
-        "name": "Активные",
+        "name": "Последствия",
         "type": "object-loop",
         "header": "show",
-        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == true} => {b}{system.label}{/b}: {system.value}{nl}",
-        "align": "left"
-      },
-      {
-        "name": "Неактивные",
-        "type": "object-loop",
-        "header": "show",
-        "text": "items{type == 'consequence' && system.value != '' && system.label != '' && system.active == false} => {b}{system.label}{/b}: {system.value}{nl}",
+        "text": "items{type == 'consequence' && system.value != '' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
         "align": "left"
       }
     ]

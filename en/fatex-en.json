@@ -1,0 +1,35 @@
+{
+  "name": "FateX EN",
+  "system": "fatex",
+  "author": "YoshiakiHisaka",
+  "version": "1.0.0",
+  "minimumSystemVersion": "1.5.4",
+  "offline_excludes": [
+    "npc"
+  ],
+  "rows": [
+    [
+      {
+        "name": "Character",
+        "type": "direct",
+        "header": "show",
+        "text": "{charactersheet}{nl}{name}{nl}{system.fatepoints.current} / {system.fatepoints.refresh}",
+        "align": "center"
+      },
+      {
+        "name": "Aspects",
+        "type": "object-loop",
+        "header": "show",
+        "text": "items{type == 'aspect' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left"
+      },
+      {
+        "name": "Consequences",
+        "type": "object-loop",
+        "header": "show",
+        "text": "items{type == 'consequence' && system.value != '' && system.label != ''} => {b}{system.label}{/b}: {system.value}{nl}",
+        "align": "left"
+      }
+    ]
+  ]
+}
