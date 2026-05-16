@@ -12,4 +12,6 @@ System: [FateX](https://github.com/anvil-vtt/FateX)
 
 ---
 
-![1778912258052](image/README/1778912258052.png)![1778912188047](https://file+.vscode-resource.vscode-cdn.net/d%3A/my-dev-repos/fvtt-party-sheet-fatex-templates/image/README/1778912188047.png)
+![ ](https://github.com/YoshiakiHisaka/fvtt-party-sheet-fatex-templates/blob/main/image/README/v1_1_0.png)
+
+![ ](https://github.com/YoshiakiHisaka/fvtt-party-sheet-fatex-templates/blob/main/image/README/v1_1_0_checkbox.png)
