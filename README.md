@@ -1,4 +1,4 @@
-# fvtt-party-sheet-fatex-templates
+# Foundry VTT FateX party sheet templates
 
 FATE templates for [party sheet module](https://github.com/EddieDover/fvtt-party-sheet-templates) (foundry vtt)
 
